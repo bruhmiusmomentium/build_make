@@ -77,6 +77,12 @@ ifndef PLATFORM_SDK_VERSION
 endif
 .KATI_READONLY := PLATFORM_SDK_VERSION
 
+ifndef PRODUCT_TARGET_VNDK_VERSION
+  # This is the SDK version of the prebuilt vendor image and is used to
+  # overlay vendor image from TARGET_COPY_OUT_VENDOR.
+  PRODUCT_TARGET_VNDK_VERSION := $(PLATFORM_SDK_VERSION)
+endif
+
 # This is the sdk extension version of this tree.
 PLATFORM_SDK_EXTENSION_VERSION := 3
 .KATI_READONLY := PLATFORM_SDK_EXTENSION_VERSION
